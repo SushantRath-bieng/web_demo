@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Loader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #iframe-container {
+            margin-top: 20px;
+            width: 100%;
+            height: 500px;
+        }
+
+        iframe {
+            width: 80%;
+            height: 100%;
+            border: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Slow Loader</h1>
+
+    <button onclick="loadIframe('https://reports.cropin.com/app/main/dashboards/663c621ac221ae0038db0e08?data=firagt&embed=true&r=false&t=true')">Historical</button>
+    <button onclick="loadIframe('https://reports.cropin.com/app/main/dashboards/663c61f5c221ae0038db0d73?data=firagt&embed=true&r=false&t=true')">Current</button>
+
+    <div id="iframe-container">
+        <iframe id="content-frame" src=""></iframe>
+    </div>
+
+    <script>
+        function loadIframe(url) {
+            document.getElementById('content-frame').src = url;
+        }
+    </script>
+
+</body>
+</html>
